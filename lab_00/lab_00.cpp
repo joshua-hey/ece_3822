@@ -1,25 +1,28 @@
 /*
 Lab 00
 
-Description: <a brief description of what this file does>
+Description: <This file outputs the average of the data in data.txt.>
 
-@Author: <your name>
-@Contact: <your email>
-@Date: <the date>
+@Author: <Joshua Hey>
+@Contact: <joshua.hey@temple.edu>
+@Date: <28.08.2025>
 
 Example:
     This file can be compiled by typing:
-    <tell me what to type at the command line to get this file to compile>
+    <g++ -o lab_00.out lab_00.cpp>
 
     This file can be run by typing:
-    <tell me what to type at the command line to get this file to run>
+    <./lab_00> 
+    OR if you would prefer to upload and use a different data file (ex: mydata.txt):
+    <./lab_00 mydata.txt>
 
 Sources: 
-    List any sources you used for help
-    This includes classmates, text books, the internet, and AI
+    Stack Overflow
+    cppreference.com
+    Claude AI
 */
 
-
+#include<iomanip>
 #include<iostream>
 #include<fstream>
 using namespace std;
@@ -39,11 +42,11 @@ int main(int argc, char** argv){
         filename = argv[1];
 
     // step 1 init variables
-    int s = 0;
+    float s = 0;
     int n = 0;
     double avg = 0;
     string line;
-    int val;
+    float val;
 
     // step 2 open file
     ifstream file_id(filename);
@@ -52,10 +55,14 @@ int main(int argc, char** argv){
     // this is just an example to demonstrate syntax
     while (getline(file_id,line)){
         val = stof(line);
+        s += val;
+        n++;
     }
 
+    avg = s / n;
+
     // step 4 print value
-    cout << "The average value is " << avg << endl;
+    cout << "The average value is " << setprecision(2) << fixed << avg << endl;
 
     file_id.close();
 

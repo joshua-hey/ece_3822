@@ -1,17 +1,17 @@
 '''
 Lab 00
 
-Description: <This file outputs the average of the data in data.txt>
+Description: <This file outputs the average of the data in data.txt.>
 
 @Author: <Joshua Hey>
 @Contact: <joshua.hey@temple.edu>
 @Date: <28.08.2025>
 
 Example:
-    This file can be run by in the course server by typing:
-    python lab_00.py 
+    This file can be run in the course server by typing:
+    <python lab_00.py>
     OR if you would prefer to upload and use a different data file (ex: mydata.txt):
-    python lab_00.py mydata.txt
+    <python lab_00.py mydata.txt>
 
 Sources: 
     Claude AI
@@ -31,7 +31,7 @@ def compute_average(nums: list[int]) -> float:
 def display_value(val: float) -> None:
 
     # display a floating point number with two significant digits
-    print(f'{float(f"{val:.2g}"):g}') #found in stack overflow post
+    print(f"The average value is {round(val, 2):.2f}")
 
 
 def main(argv: list[str]) -> None:
