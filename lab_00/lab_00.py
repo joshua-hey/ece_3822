@@ -1,44 +1,40 @@
 '''
 Lab 00
 
-Description: <a brief description of what this file does>
+Description: <This file outputs the average of the data in data.txt>
 
 @Author: <Joshua Hey>
 @Contact: <joshua.hey@temple.edu>
-@Date: <27.08.2025>
+@Date: <28.08.2025>
 
 Example:
-    This file can be run by typing
-    <tell me what to type at the command line to get this file to run>
+    This file can be run by in the course server by typing:
+    python lab_00.py 
+    OR if you would prefer to upload and use a different data file (ex: mydata.txt):
+    python lab_00.py mydata.txt
 
 Sources: 
-    List any sources you used for help
-    This includes classmates, text books, the internet, and AI
+    Claude AI
+    Stack Overflow
 
 Remember to include types in your method input/output
 '''
 
 import sys
 
-def compute_average(nums):
+def compute_average(nums: list[int]) -> float:
+
     # compute the average of a list of numbers of arbitrary length
-
-    # input: array of integers
-    # returns: the floating point average of those numbers
-
-    # YOUR CODE HERE
+    avg = sum(nums) / len(nums)
     return avg
 
-def display_value(val):
+def display_value(val: float) -> None:
+
     # display a floating point number with two significant digits
+    print(f'{float(f"{val:.2g}"):g}') #found in stack overflow post
 
-    # input: a single floating point value
-    # returns: none
 
-    # YOUR CODE HERE
-    pass
-
-def main(argv):
+def main(argv: list[str]) -> None:
 
     # don't mess with this part
     filename = "/data/courses/ece_3822/current/lab_00/data.txt"
